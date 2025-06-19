@@ -95,11 +95,10 @@
   </div>
 </template>
 <script setup>
-import Login from "~/pages/login.vue";
-
 const searchQuery = ref("");
-const url = "http://127.0.0.1:8000/api/movies";
-const route = useRoute();
+const config = useRuntimeConfig();
+
+const url = `${config.public.apiBase}/api/movies`;
 
 // Fetch data reactively
 const { data, pending, refresh } = await useFetch(url, {

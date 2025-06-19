@@ -1,6 +1,7 @@
 <template>
   <div class="w-full">
     <swiper
+      v-if="trending"
       :slidesPerView="1"
       :pagination="{
         clickable: true,
@@ -57,6 +58,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-xl font-bold py-5">Trending</div>
         <swiper
+          v-if="trending"
           :slidesPerView="5"
           :pagination="{
             clickable: true,
@@ -83,6 +85,7 @@
         </swiper>
         <div class="text-xl font-bold py-5">Top Rated</div>
         <swiper
+          v-if="rate"
           :slidesPerView="5"
           :pagination="{
             clickable: true,
@@ -97,7 +100,7 @@
           :centeredSlides="true"
           :loop="true"
         >
-          <swiper-slide v-for="m in rate.slice(0, 10)" :key="m.id">
+          <swiper-slide v-for="m in rate?.slice(0, 10)" :key="m.id">
             <NuxtLink :to="`/movie/${m.id}`">
               <MovieCard
                 :image="m.thumbnail_url"
