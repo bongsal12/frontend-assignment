@@ -21,7 +21,7 @@
       >
         <div
           class="bg-red-500 rounded-sm px-1 mr-0.5"
-          v-for="(g, index) in genre.slice(0, 2)"
+          v-for="(g, index) in genre?.slice(0, 2)"
           :key="index"
         >
           {{ g.name }}

@@ -29,7 +29,7 @@
               class="absolute z-10 bg-[#063781] w-[400px] rounded-md mt-1 p-1"
               v-show="searchQuery && searchQuery.trim() !== ''"
             >
-              <div v-for="movie in movies.slice(0, 6)" :key="movie.id">
+              <div v-for="movie in movies?.slice(0, 6)" :key="movie.id">
                 <NuxtLink
                   :to="`/movie/${movie.id}`"
                   class="flex bg-cyan-800 p-2 rounded-md mb-2 gap-3 hover:bg-[#7396cad0]"
